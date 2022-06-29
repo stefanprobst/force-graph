@@ -194,6 +194,9 @@ export default Kapsule({
       const t = d3ZoomTransform(state.canvas);
       return { x: x * t.k  + t.x, y: y * t.k + t.y };
     },
+    getContainer: function(state) {
+      return state.canvas.parentElement
+    },
     screen2GraphCoords: function(state, x, y) {
       const t = d3ZoomTransform(state.canvas);
       return { x: (x - t.x) / t.k, y: (y - t.y) / t.k };
